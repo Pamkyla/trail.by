@@ -1,0 +1,56 @@
+body {
+    font-family: 'Open Sans';
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 25px;
+}
+
+.logo-img {
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+.logo-headline {
+    color: #ffffff;
+    font-size: 32px;
+}
+
+.menu-burger {
+    width: 60px;
+}
+
+.title {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 50px 20px 30px;
+}
+
+.detail-block {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+}
+
+.detail-block-btn {
+    background: transparent;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 15px 35px;
+}

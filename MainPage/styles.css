@@ -1,0 +1,262 @@
+.search-background-wrapper {
+    display: flex;
+    height: 700px;
+    background-image: url('./img/main_background_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+}
+
+.search-bar {
+    width: 1000px;
+    height: 50px;
+    margin: auto;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-image: url(./img/search.svg);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: 10px 10px;
+    padding-left: 70px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.search-bar::-webkit-input-placeholder {
+    color: #ffffff;
+}
+
+.video-review-block {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.video-review-block-item {
+    max-width: 300px;
+    margin: 30px;
+    text-align: center;
+}
+
+.video-review-description {
+    font-size: 18px;
+    text-decoration: underline;
+    margin: 15px;
+}
+
+.video-review-img {
+    width: 300px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    background: #C5E1A5;
+    border-radius: 50px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.user-avatar {
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.news-background-wrapper {
+    background-image: url(./img/news-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.news-block {
+    display: flex;
+    justify-content: space-around;
+}
+
+.news-block-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    margin: 40px;
+}
+
+.news-block-item-headline {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
+
+.news-block-item-description {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.news-block-item-btn {
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    padding: 5px 25px;
+    background: transparent;
+    color: #ffffff;
+}
+
+.review-block {
+    display: flex;
+}
+
+.last-comment-headline {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.your-comment-headline {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.last-comment {
+    width: 60%;
+}
+
+.last-comment-block {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.last-comment-item {
+    margin: 10px 20px;
+}
+
+.user-comment-text {
+    padding: 20px;
+    border: 1px solid #000000;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.your-comment {
+    width: 40%;
+}
+
+.your-comment-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.your-comment-headline {
+    font-size: 18px;
+}
+
+.your-comment-name {
+    margin: 10px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.your-comment-text {
+    margin: 10px;
+    padding: 15px;
+}
+
+.add-your-comment {
+    max-width: 200px;
+    margin: 0 auto;
+    background-color: #AED581;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+.routes-background-wrapper {
+    background: url(./img/main_background_2.jpg) no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.routes-headline {
+    font-size: 42px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+.contact-block {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contact-block-item {
+    width: 50%;
+}
+
+.contact-block-item:nth-child(odd) {
+    border-right: 1px solid #000000;
+}
+
+.contact-block-headline {
+    margin: 10px;
+}
+
+.contact-block-description {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contact-block-description-item {
+    padding: 20px;
+}
+
+.footer-block {
+    background: #7DA453;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #ffffff;
+    line-height: 2;
+}
+
+.soc-net-img {
+    width: 35px;
+}
+
+@media (max-width: 1000px) {
+
+    .news-block {
+        flex-wrap: wrap;
+    }
+
+    .review-block {
+        flex-direction: column;
+    }
+
+    .last-comment {
+        width: 100%;
+    }
+
+    .your-comment {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .last-comment-block {
+        flex-wrap: wrap;
+    }
+}
