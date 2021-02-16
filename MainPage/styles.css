@@ -220,21 +220,6 @@
     padding: 20px;
 }
 
-.footer-block {
-    background: #7DA453;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    color: #ffffff;
-    line-height: 2;
-}
-
-.soc-net-img {
-    width: 35px;
-}
-
 @media (max-width: 1000px) {
 
     .news-block {
