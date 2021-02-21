@@ -61,47 +61,6 @@
     width: 25px;
 }
 
-.offer-section {
-    margin-bottom: 120px;
-}
-
-.offer-block {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.offer-block-item {
-    width: 300px;
-    margin: 10px;
-}
-
-.offer-img {
-    width: 100%;
-}
-
-.offer-description {
-    text-align: center;
-    text-decoration: underline;
-    padding: 15px 50px;
-    font-size: 18px;
-}
-
-.offer-additional-block {
-    text-align: center;
-}
-
-.offer-headline {
-    font-size: 20px;
-    margin: 40px;
-}
-
-.more-offer-btn {
-    font-size: 24px;
-    font-weight: bold;
-    padding: 15px 60px;
-}
 
 @media (max-width:768px) {
     .news-block {
