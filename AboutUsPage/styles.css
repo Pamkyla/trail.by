@@ -1,0 +1,102 @@
+.headline-block {
+    overflow: hidden;
+}
+
+.headline-block-item {
+    display: flex;
+}
+
+.headline-block-img {
+    margin: 150px 0 20px;
+} 
+
+.ticker {
+    width: 3000px;
+}
+
+.headline-block-text {
+    font-size: 56px;
+    margin: 0 100px 100px;
+}
+
+.biography-headline {
+    font-size: 42px;
+    margin-top: 100px;
+    padding-left: 40px;
+}
+
+.biography-block-item {
+    display: flex;
+    padding: 60px 40px;
+}
+
+.biography-block-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.biography-block-item-text-block {
+    padding: 40px;
+    font-size: 24px;
+    text-align: center;
+    align-self: center;
+    width: 100%;
+}
+
+.biography-block-item-img-block {
+    align-self: center;
+}
+
+.about-us-headline {
+    font-size: 42px;
+    margin-top: 100px;
+    padding-left: 40px;
+}
+
+.about-us-block-item {
+    display: flex;
+    padding: 60px 40px;
+}
+
+.about-us-block-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.about-us-block-item-text-block {
+    padding: 40px;
+    font-size: 24px;
+    text-align: center;
+    align-self: center;
+    width: 100%;
+}
+
+.about-us-block-item-img-block {
+    align-self: center;
+}
+
+.deal-block {
+    display: flex;
+}
+
+.deal-block-item {
+    padding: 40px;
+}
+
+.deal-list {
+    font-size: 24px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.deal-list-point {
+    padding: 15px;
+    list-style: inside;
+}
+
+.deal-link {
+    margin-bottom: 100px;
+}
+
+.deal-link-item {
+    font-size: 24px;
+    padding: 20px;
+}

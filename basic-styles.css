@@ -1,5 +1,14 @@
 body {
     font-family: 'Open Sans';
+    background: #ebebeb;
+}
+
+img {
+    width: 100%;
+}
+
+.section {
+    background: #ffffff;
 }
 
 .container {
@@ -82,7 +91,7 @@ body {
 }
 
 .offer-section {
-    margin-bottom: 120px;
+    padding-bottom: 120px;
 }
 
 .offer-block {
