@@ -100,3 +100,9 @@
     font-size: 24px;
     padding: 20px;
 }
+
+@media (max-width: 750px) {
+    .deal-block {
+        flex-wrap: wrap;
+    }
+}

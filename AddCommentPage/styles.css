@@ -1,0 +1,53 @@
+.routes-block {
+    text-align: center;
+    padding: 100px;
+}
+
+.routes-headline {
+    margin-bottom: 35px;
+    font-size: 26px;
+    padding: 0 250px;
+}
+
+.rating-block {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.rating-block-img {
+    border-bottom: 1px solid #000;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.rating-img {
+    width: 25px;
+}
+
+.your-comment-block {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.your-comment-name {
+    max-width: 35%;
+    padding: 10px;
+    margin: 25px 0;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.your-comment-text {
+    max-width: 65%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.add-your-comment-btn-block {
+    text-align: center;
+    margin: 0 50px 75px;
+}

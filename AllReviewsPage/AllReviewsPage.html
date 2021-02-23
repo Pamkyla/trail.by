@@ -5,21 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../basic-styles.css">
+        <link rel="stylesheet" href="../basic-resources/reset.css">
+    <link rel="stylesheet" href="../basic-resources/basic-styles.css">
     <link rel="stylesheet" href="./styles.css">
     <title>Новости - общая</title>
 </head>
 
 <body>
     <div class="container">
+        <div class="popup">
+            <div id="fspboverlay"></div>
+            <div id="popup-banner">
+                <div class="popup-banner">
+                    <img class="popup-image" src="../basic-img/offer-module.jpg" alt="Лучи добра" width="800"
+                        height="544">
+                    <div class="banner-readme">
+                        <div class="banner-readme-item">
+                            <a href="../AboutUsPage/AboutUsPage.html"><button class="trail-btn banner-readme-btn">О
+                                    нас</button></a>
+                        </div>
+                        <div class="banner-readme-item">
+                            <a href="../RoutesPage/RoutesPage.html"><button
+                                    class="trail-btn banner-readme-btn">Маршруты</button></a>
+                        </div>
+                        <div class="banner-readme-item">
+                            <a href="../AllNewsPage/AllNewsPage.html"><button
+                                    class="trail-btn banner-readme-btn">Новости</button></a>
+                        </div>
+                        <div class="banner-readme-item">
+                            <a href="../AllReviewsPage/AllReviewsPage.html"><button
+                                    class="trail-btn banner-readme-btn">Обзоры</button></a>
+                        </div>
+                        <div class="banner-readme-item">
+                            <a href="../index.html"><button class="trail-btn banner-readme-btn">Главная</button></a>
+                        </div>
+                        <div class="banner-readme-item">
+                            <button class="trail-btn banner-readme-btn" id="CloseBtn">Выход</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <header class="header">
             <div class="logo">
                 <img class="logo-img" src="../basic-img/logo.svg" alt="logo">
                 <p class="logo-headline">trail.by</p>
             </div>
             <div class="menu">
-                <img class="menu-burger" src="../basic-img/menu.svg" alt="menu">
+                                <button class="openPopup" onclick="fspboverlay()"><img class="menu-burger" src="../basic-img/menu.svg"
+                        alt="menu"></button>
             </div>
         </header>
         <main class="main">
@@ -182,6 +216,8 @@
             </div>
         </footer>
     </div>
+    <script src="../basic-resources/popup-script.js"></script>
+
 </body>
 
 </html>

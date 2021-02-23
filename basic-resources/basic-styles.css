@@ -1,14 +1,14 @@
 body {
     font-family: 'Open Sans';
-    background: #ebebeb;
 }
 
 img {
     width: 100%;
 }
 
-.section {
-    background: #ffffff;
+a {
+    text-decoration: none;
+    color: #000;
 }
 
 .container {
@@ -50,6 +50,14 @@ img {
     border-radius: 15px;
     background: transparent;
     padding: 10px 30px;
+}
+
+.trail-btn:hover {
+    background: #ebebeb;
+} 
+
+.trail-btn:active {
+    border: inset;
 }
 
 .title {
@@ -130,4 +138,106 @@ img {
     font-size: 24px;
     font-weight: bold;
     padding: 15px 60px;
+}
+
+/* Popup start */
+
+.popup {
+    display: flex;
+    justify-content: center;
+}
+
+.openPopup {
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+#fspboverlay {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.8;
+    z-index: 99999;
+}
+
+#popup-banner {
+    display: none;
+    position: fixed;
+    z-index: 100000;
+    top: 10%;
+}
+
+.popup-banner {
+    display: flex;
+}
+
+.banner-readme {
+    justify-content: space-around;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.banner-readme-item {
+    margin: 35px;   
+}
+
+.banner-readme-btn {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    color: #ffffff;
+}
+
+.banner-readme-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    color: #ffffff;
+}
+
+.popup-image {
+    border-radius: 5%;
+}
+
+#CloseBtn {
+background: #ffffff;
+color: #000000;
+}
+
+#CloseBtn:hover {
+    background: #ebebebbb;
+    color: #000000;
+    }
+
+@media only screen and (max-device-width: 1024px) {
+    #popup-banner {
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 767px) {
+    .popup-banner a {
+        position: relative !important;
+        color: #332200 !important;
+        z-index: 200000;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        background: #ffcf4c;
+        padding: 8px 32px;
+        top: 0;
+        right: 0;
+        display: block;
+        margin: 18px auto;
+        max-width: 160px;
+    }
+
+    .bannerreadme {
+        text-align: center;
+    }
 }
