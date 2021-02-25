@@ -1,18 +1,22 @@
 .routes-block {
     text-align: center;
-    padding: 100px;
+    padding: 150px 40px;
 }
 
 .routes-headline {
     margin-bottom: 35px;
     font-size: 26px;
-    padding: 0 250px;
 }
 
 .rating-block {
     display: flex;
     justify-content: space-around;
     text-align: center;
+    flex-wrap: wrap;
+}
+
+.rating-block-item {
+    margin: 10px;
 }
 
 .rating-block-img {
@@ -52,7 +56,12 @@
 }
 
 .variant-block-filter-item-btn {
-    margin: 30px 100px;
+    margin: 10px;
+    max-height: 40px;
+}
+
+.variant-block-filter-item-btn:nth-child(even) {
+    margin: 25px;
     max-height: 40px;
 }
 
@@ -69,7 +78,6 @@
 .routes-description-text-block {
     width: 50%;
     text-align: center;
-    padding: 0 150px;
     font-size: 24px;
 }
 
@@ -93,4 +101,27 @@
     padding: 50px 25px;
     text-align: center;
     line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .routes-description-block-item {
+        flex-direction: column;
+    }
+    
+    .routes-description-block-item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .routes-description-text-block {
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+    }
+    
+    .routes-description-img-block {
+        width: 80%;
+    }
+
+    .routes-description-block-item {
+        margin-bottom: 100px;
+    }
 }
