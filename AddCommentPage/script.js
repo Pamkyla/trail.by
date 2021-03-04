@@ -23,6 +23,7 @@ function getYourComment() {
         // section.before(commentForm);
         commentForm.setAttribute('action', `http://localhost:4000/comment?name=${nickname}&email=${userMail}&text=${commentariyText}&rating=${starCounting()}&id=${newsId}`);
         commentForm.submit();
+        return
     }
     addYourComment();
 }
