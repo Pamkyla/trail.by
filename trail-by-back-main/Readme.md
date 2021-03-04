@@ -8,3 +8,5 @@ http://{domain}/comment?name={Nickname}&email={user mail}&text={commentariy text
 Список всех новостей - http://{domain}/news
 
 Список новостей по фильтрам - http://{domain}/news?filter={filter name}
+
+Список ведео обзоров - http://{domain}/videos

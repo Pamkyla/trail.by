@@ -17,13 +17,10 @@ function getYourComment() {
     let newsId = '603d3d5a1bfd7d916d852e76';
 
 
-    function addYourComment() {
-        let commentForm = document.getElementById('commentForm');
-        // let section = document.querySelector('.offer-section');
-        // section.before(commentForm);
-        commentForm.setAttribute('action', `http://localhost:4000/comment?name=${nickname}&email=${userMail}&text=${commentariyText}&rating=${starCounting()}&id=${newsId}`);
-        commentForm.submit();
-        return
+    async function addYourComment() {
+        const URL = `http://localhost:4000/comment?name=${nickname}&email=${userMail}&text=${commentariyText}&rating=${starCounting()}&id=${newsId}`;
+        const response = await axios.get(URL);
+        console.log(response.data);
     }
     addYourComment();
 }

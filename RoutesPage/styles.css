@@ -33,6 +33,8 @@
 .variant-block {
     display: flex;
     align-items: center;
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 
 .variant-headline {
@@ -41,11 +43,11 @@
 
 .variant-block-filter {
     display: flex;
-    flex-direction: column;
 }
 
 .variant-block-filter-beauty {
     display: flex;
+    justify-content: flex-end;
 }
 
 .variant-block-filter-item {
@@ -53,15 +55,11 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-content: baseline;
+    width: 50%;
 }
 
 .variant-block-filter-item-btn {
     margin: 10px;
-    max-height: 40px;
-}
-
-.variant-block-filter-item-btn:nth-child(even) {
-    margin: 25px;
     max-height: 40px;
 }
 

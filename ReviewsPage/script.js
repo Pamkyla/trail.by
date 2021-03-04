@@ -73,10 +73,6 @@ async function addNewsItem() {
 
         userName.innerHTML = `${el.name}`
         userComment.innerHTML = `${el.text}`
-
-        console.log(mainBlock);
-        console.log(data);
-
     }
     let addComment = document.createElement('div');
     addComment.classList.add('rating-block-item')
