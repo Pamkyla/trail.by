@@ -52,7 +52,7 @@
                 <p class="logo-headline">trail.by</p>
             </div>
             <div class="menu">
-                                <button class="openPopup" onclick="fspboverlay()"><img class="menu-burger" src="../basic-img/menu.svg"
+                <button class="openPopup" onclick="fspboverlay()"><img class="menu-burger" src="../basic-img/menu.svg"
                         alt="menu"></button>
             </div>
         </header>
@@ -108,7 +108,8 @@
                 </div>
                 <div class="variant-block-filter">
                     <div class="variant-block-filter-item">
-                        <button class="variant-block-filter-item-btn trail-btn">База отдыха</button>
+                        <button class="variant-block-filter-item-btn trail-btn" onclick="printToPDF()">База
+                            отдыха</button>
                         <button class="variant-block-filter-item-btn trail-btn">База отдыха</button>
                         <button class="variant-block-filter-item-btn trail-btn">База отдыха</button>
                         <button class="variant-block-filter-item-btn trail-btn">База отдыха</button>
@@ -169,19 +170,216 @@
                         </div>
                     </div>
                     <div class="routes-description-block-item">
-                        <div class="routes-description-text-block">
-                            <p class="routes-description-text">
-                                Описание трассы
-                                места общепита
-                                возможный ночлег
-                                киллометраж
-                                цена с посещением экскурсий
-                                цена с бронированием билетов заранее
-                            </p>
-                        </div>
-                        <div class="routes-description-img-block">
-                            <img src="./img/route-description-img.jpg" alt="description image"
-                                class="routes-description-img">
+                        <div class="routes-description-img-block" style="width: 100%;">
+
+
+                            <!DOCTYPE html>
+                            <html>
+
+                            <head>
+                                <title>Directions Service (Complex)</title>
+                                <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+                                <style type="text/css">
+                                    /* Always set the map height explicitly to define the size of the div
+                                   * element that contains the map. */
+                                    #map {
+                                        height: 500px;
+                                    }
+
+                                    /* Optional: Makes the sample page fill the window. */
+                                    html,
+                                    body {
+                                        height: 100%;
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+
+                                    #floating-panel {
+                                        position: absolute;
+                                        top: 10px;
+                                        left: 25%;
+                                        z-index: 5;
+                                        background-color: #fff;
+                                        padding: 5px;
+                                        border: 1px solid #999;
+                                        text-align: center;
+                                        font-family: "Roboto", "sans-serif";
+                                        line-height: 30px;
+                                        padding-left: 10px;
+                                    }
+
+                                    #warnings-panel {
+                                        display: none;
+                                        width: 100%;
+                                        height: 10%;
+                                        text-align: center;
+                                    }
+
+                                    .map-wrapper {
+                                        position: relative;
+                                    }
+                                </style>
+                                <script>
+                                    function initMap() {
+                                        const markerArray = [];
+                                        // Instantiate a directions service.
+                                        const directionsService = new google.maps.DirectionsService();
+                                        // Create a map and center it on Manhattan.
+                                        const map = new google.maps.Map(document.getElementById("map"), {
+                                            zoom: 13,
+                                            center: {
+                                                lat: 40.771,
+                                                lng: -73.974
+                                            },
+                                        });
+                                        // Create a renderer for directions and bind it to the map.
+                                        const directionsRenderer = new google.maps.DirectionsRenderer({
+                                            map: map,
+                                        });
+                                        // Instantiate an info window to hold step text.
+                                        const stepDisplay = new google.maps.InfoWindow();
+                                        // Display the route between the initial start and end selections.
+                                        calculateAndDisplayRoute(
+                                            directionsRenderer,
+                                            directionsService,
+                                            markerArray,
+                                            stepDisplay,
+                                            map
+                                        );
+
+                                        // Listen to change events from the start and end lists.
+                                        const onChangeHandler = function () {
+                                            calculateAndDisplayRoute(
+                                                directionsRenderer,
+                                                directionsService,
+                                                markerArray,
+                                                stepDisplay,
+                                                map
+                                            );
+                                        };
+                                        document
+                                            .getElementById("start")
+                                            .addEventListener("change", onChangeHandler);
+                                        document
+                                            .getElementById("end")
+                                            .addEventListener("change", onChangeHandler);
+                                    }
+
+                                    function calculateAndDisplayRoute(
+                                        directionsRenderer,
+                                        directionsService,
+                                        markerArray,
+                                        stepDisplay,
+                                        map
+                                    ) {
+                                        // First, remove any existing markers from the map.
+                                        for (let i = 0; i < markerArray.length; i++) {
+                                            markerArray[i].setMap(null);
+                                        }
+                                        // Retrieve the start and end locations and create a DirectionsRequest using
+                                        // WALKING directions.
+                                        directionsService.route({
+                                                origin: document.getElementById("start").value,
+                                                destination: document.getElementById("end").value,
+                                                travelMode: google.maps.TravelMode.WALKING,
+                                            },
+                                            (result, status) => {
+                                                // Route the directions and pass the response to a function to create
+                                                // markers for each step.
+                                                if (status === "OK" && result) {
+                                                    document.getElementById("warnings-panel").innerHTML =
+                                                        "<b>" + result.routes[0].warnings + "</b>";
+                                                    directionsRenderer.setDirections(result);
+                                                    showSteps(result, markerArray, stepDisplay, map);
+                                                } else {
+                                                    window.alert("Directions request failed due to " + status);
+                                                }
+                                            }
+                                        );
+                                    }
+
+                                    function showSteps(directionResult, markerArray, stepDisplay, map) {
+                                        // For each step, place a marker, and add the text to the marker's infowindow.
+                                        // Also attach the marker to an array so we can keep track of it and remove it
+                                        // when calculating new routes.
+                                        const myRoute = directionResult.routes[0].legs[0];
+
+                                        for (let i = 0; i < myRoute.steps.length; i++) {
+                                            const marker = (markerArray[i] =
+                                                markerArray[i] || new google.maps.Marker());
+                                            marker.setMap(map);
+                                            marker.setPosition(myRoute.steps[i].start_location);
+                                            attachInstructionText(
+                                                stepDisplay,
+                                                marker,
+                                                myRoute.steps[i].instructions,
+                                                map
+                                            );
+                                        }
+                                    }
+
+                                    function attachInstructionText(stepDisplay, marker, text, map) {
+                                        google.maps.event.addListener(marker, "click", () => {
+                                            // Open an info window when the marker is clicked on, containing the text
+                                            // of the step.
+                                            stepDisplay.setContent(text);
+                                            stepDisplay.open(map, marker);
+                                        });
+                                    }
+                                </script>
+                            </head>
+
+                            <body>
+                                <div class="map-wrapper">
+                                    <div id="floating-panel">
+                                        <b>Start: </b>
+                                        <select id="start">
+                                            <option value="vulica Zaslonova 29, Salihorsk">Penn Station
+                                            </option>
+                                            <option value="vulica Akademičnaja 10, Grodno 230023">
+                                                Grodnenskiy Gosudarstvennyy Agrarnyy Universitet. Biotekhnologicheskiy Fakul'tet
+                                            </option>
+                                            <option value="вуліца Халаева 11, Sharkaŭshchyna">
+                                                Шарковщинская СШ № 1
+                                            </option>
+                                            <option value="Новополоцк-1 211441">
+                                                OJSC Naftan
+                                            </option>
+                                            <option value="praspekt Mašerava 2, Brest">
+                                                Muzei Zheleznodorozhnoi Tehniki
+                                            </option>
+                                        </select>
+                                        <b>End: </b>
+                                        <select id="end">
+                                            <option value="Prospekt Dzerzhinskogo 104, Minsk 220116">Titan Cinema</option>
+                                            <option value="Korolov Stan">
+                                                Царква Ўзвышэньня Сьвятога Крыжа
+                                            </option>
+                                            <option value="Красноармейская 3, Сморгонь, 231000">Spaso-Preobrazhenskaja Cerkov'</option>
+                                            <option value="вуліца Арлоўскага 2, Kirawsk 213931">
+                                                Sanatoriy Imeni K.p.orlovskogo
+                                            </option>
+                                            <option value="ул.Белорусская, д. 89, д. Людвиново 222462">
+                                                Usad'ba "Kostykin Dvor"
+                                            </option>
+                                            <option value="ул. Гурского, Minsk 220089">Michalova</option>
+                                        </select>
+                                    </div>
+                                    <div id="map"></div>
+                                    &nbsp;
+                                    <div id="warnings-panel"></div>
+                                </div>
+                                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                                <script
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCch0eEaW-rjJzvWM5rbX9IES7HcxhB9s&callback=initMap&libraries=&v=weekly"
+                                    async></script>
+                            </body>
+
+                            </html>
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -215,15 +413,14 @@
             </section>
 
         </main>
-
         <footer class="footer">
             <div class="footer-block">
                 <div class="footer-block-item">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
+                    <a href="https://vk.com/survival24ru"><img src="../basic-img/telephone.svg" alt="" class="soc-net-img"></a>
+                    <a href="https://vk.com/interestplanet_ru"><img src="../basic-img/telephone.svg" alt="" class="soc-net-img"></a>
+                    <a href="https://vk.com/public110852637"><img src="../basic-img/telephone.svg" alt="" class="soc-net-img"></a>
+                    <a href="https://vk.com/vk.travel"><img src="../basic-img/telephone.svg" alt="" class="soc-net-img"></a>
+                    <a href="https://vk.com/traveller1990"><img src="../basic-img/telephone.svg" alt="" class="soc-net-img"></a>
                 </div>
                 <div class="footer-block-item">
                     <p class="footer-info">2020-2021</p>

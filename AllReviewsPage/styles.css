@@ -21,6 +21,7 @@
 
 .top-reviews-block-item {
     text-align: center;
+    line-height: 2;
 }
 
 .all-routes-headline {
@@ -37,6 +38,7 @@
 
 .all-routes-block-item {
     margin: 25px;
+    line-height: 2;
 }
 
 .popular-block {

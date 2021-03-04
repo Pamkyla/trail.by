@@ -10,8 +10,24 @@
 }
 
 .news-block {
-    padding: 10px 100px;
+    margin: 100px;
     text-align: center;
+    border-bottom: 1px solid;
+}
+
+.change-news-block {
+    display: flex;
+    padding: 0 40px;
+    justify-content: space-between;
+}
+
+.change-news-block-btn-img {
+    width: 25px;
+}
+
+.main-news-block-img {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .main-news-img{
@@ -19,13 +35,15 @@
 }
 
 .main-news-description {
-    padding: 40px 100px;
+    padding: 40px 0;
+    line-height: 1.6;
 }
 
 .additional-news-description {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
 }
 
 .news-date {

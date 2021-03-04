@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../basic-resources/reset.css">
     <link rel="stylesheet" href="../basic-resources/basic-styles.css">
     <link rel="stylesheet" href="./styles.css">
-    <title>Маршруты</title>
+    <title>Добавить комментарий</title>
 </head>
 
 <body>
@@ -58,59 +58,43 @@
         </header>
 
         <main class="main">
-            <section class="section rating-routes-section">
-                <div class="routes-block">
-                    <p class="routes-headline">
-                        Как вы оцените этот обзор?
-                    </p>
-                    <div class="rating-block">
-                        <div class="rating-block-item">
-                            <div class="rating-block-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                            </div>
-                            <p class="rating-block-description">Плохо</p>
-                        </div>
-                        <div class="rating-block-item">
-                            <div class="rating-block-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                            </div>
-                            <p class="rating-block-description">Ниже среднего</p>
-                        </div>
-                        <div class="rating-block-item">
-                            <div class="rating-block-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                            </div>
-                            <p class="rating-block-description">Хорошо</p>
-                        </div>
-                        <div class="rating-block-item">
-                            <div class="rating-block-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                                <img src="../basic-img/star.svg" alt="star" class="rating-img">
-                            </div>
-                            <p class="rating-block-description">Отлично</p>
+            <form id="commentForm">
+                <section class="section rating-routes-section">
+                    <div class="routes-block">
+                        <p class="routes-headline">
+                            Как вы оцените этот обзор?
+                        </p>
+                        <div class="rating-area">
+                            <input type="radio" id="star-5" name="rating" value="5">
+                            <label for="star-5" title="Оценка «5»"></label>
+                            <input type="radio" id="star-4" name="rating" value="4">
+                            <label for="star-4" title="Оценка «4»"></label>
+                            <input type="radio" id="star-3" name="rating" value="3">
+                            <label for="star-3" title="Оценка «3»"></label>
+                            <input type="radio" id="star-2" name="rating" value="2">
+                            <label for="star-2" title="Оценка «2»"></label>
+                            <input type="radio" id="star-1" name="rating" value="1">
+                            <label for="star-1" title="Оценка «1»"></label>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="section add-your-comment-section">
-                <div class="add-your-comment-block">
-                    <div class="your-comment">
-                        <div class="your-comment-block">
-                            <input type="text" class="your-comment-name" placeholder="Ваш никнейм">
-                            <textarea class="your-comment-text" placeholder="Ваш комментарий..." maxlength="500"
-                                rows="25"></textarea>
+                <section class="section add-your-comment-section">
+                    <div class="add-your-comment-block">
+                        <div class="your-comment">
+                            <div class="your-comment-block">
+                                <input type="text" class="your-comment-name" min="3" max="10" name="name" placeholder="Ваш никнейм">
+                                <input type="email" class="your-comment-email" name="email" placeholder="Ваша почта">
+                                <textarea class="your-comment-text" name="text" placeholder="Ваш комментарий..." maxlength="500"
+                                    rows="25"></textarea>
+                            </div>
+                            <div class="add-your-comment-btn-block"><button onclick="getYourComment()"
+                                class="trail-btn add-your-comment">Добавить
+                                комментарий</button></div>
                         </div>
-                        <div class="add-your-comment-btn-block"><button class="trail-btn add-your-comment">Добавить комментарий</button></div>
                     </div>
-                </div>
-            </section>
-
+                </section>
+            </form>
             <section class="section offer-section">
                 <div class="offer-block">
                     <div class="offer-block-item">
@@ -139,11 +123,16 @@
         <footer class="footer">
             <div class="footer-block">
                 <div class="footer-block-item">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
-                    <img src="../basic-img/telephone.svg" alt="" class="soc-net-img">
+                    <a href="https://vk.com/survival24ru"><img src="../basic-img/telephone.svg" alt=""
+                            class="soc-net-img"></a>
+                    <a href="https://vk.com/interestplanet_ru"><img src="../basic-img/telephone.svg" alt=""
+                            class="soc-net-img"></a>
+                    <a href="https://vk.com/public110852637"><img src="../basic-img/telephone.svg" alt=""
+                            class="soc-net-img"></a>
+                    <a href="https://vk.com/vk.travel"><img src="../basic-img/telephone.svg" alt=""
+                            class="soc-net-img"></a>
+                    <a href="https://vk.com/traveller1990"><img src="../basic-img/telephone.svg" alt=""
+                            class="soc-net-img"></a>
                 </div>
                 <div class="footer-block-item">
                     <p class="footer-info">2020-2021</p>
@@ -155,6 +144,7 @@
                 </div>
             </div>
         </footer>
+        <script src="./script.js"></script>
         <script src="../basic-resources/popup-script.js"></script>
 </body>
 
