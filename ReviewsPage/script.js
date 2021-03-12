@@ -21,7 +21,7 @@ video.setAttribute('src', `${data[Math.round(Math.random()*13)]}`)
 
 
 async function getAllComments() {
-    const URL = `http://localhost:4000/comments?`;
+    const URL = `http://localhost:4000/comments?id=603d3d5a1bfd7d916d852e76`;
     const response = await axios.get(URL);
     return (response.data);
 }

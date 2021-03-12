@@ -8,6 +8,10 @@
     text-transform: uppercase;
 }
 
+.change-news-section {
+    margin-top: 150px;
+}
+
 .top-reviews-block {
     display: flex;
     justify-content: space-around;
@@ -80,5 +84,295 @@
 
     .popular-text-block {
         width: 100%;
+    }
+}
+
+.filter-block {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 100px 100px 60px;
+}
+
+.filter-block-item {
+    margin: 5px;
+}
+
+.news-block {
+    margin: 100px;
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+.change-news-block {
+    display: flex;
+    padding: 0 40px;
+    justify-content: space-between;
+}
+
+.change-news-block-btn-img {
+    width: 25px;
+}
+
+.main-news-img{
+    width: 100%;
+    height: 500px;
+}
+
+.main-news-description {
+    padding: 40px 0;
+    line-height: 1.6;
+}
+
+.additional-news-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.news-date {
+    color: grey;
+}
+
+.news-btn {
+    display: flex;
+    align-items: center;
+}
+
+.share-btn {
+    background: transparent;
+    border: none;
+    margin-right: 25px;
+}
+
+.detail-btn-img {
+    width: 25px;
+}
+
+.more-news-block {
+    text-align: center;
+    padding: 60px;
+}
+
+.more-news-btn {
+    padding: 30px 60px;
+    border-radius: 35px;
+}
+
+.more-news-btn-img {
+    width: 25px;
+}
+
+
+@media (max-width:768px) {
+    .news-block {
+        padding: 10px 40px;
+    }
+
+    .main-news-description {
+        padding: 35px 20px;
+    }
+}
+
+.video-review-block {
+    display: flex;
+    padding: 40px;
+    padding-top: 150px;
+}
+
+.back-video-review-btn {
+    margin-bottom: 40px;
+}
+
+.back-video-review-img {
+    width: 25px;
+}
+
+.video-review-block-item-headline-block {
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.video-review-block-item-headline-main {
+    font-size: 32px;
+
+}
+
+.video-review-block-item:first-child {
+    width: 70%;
+}
+
+.video-review-img-block {
+    margin-bottom: 50px;
+}
+
+.offer-block-headline {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.video-review-tag-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.video-review-tag-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.video-review-tag-complexity {
+    font-size: 20px;
+}
+
+.video-review-tag-complexity-img {
+    width: 15px;
+    margin: 5px;
+}
+
+.video-description-block {
+    padding: 0 40px;
+}
+
+.video-description-block-text {
+    border: 1px solid #000;
+    padding: 50px;
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.video-description-block-item-btn-block {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.rating-section {
+    padding: 0 40px;
+}
+
+.rating-block {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.add-comment-btn-block {
+    text-align: center;
+}
+
+.user-headline-block {
+    display: flex;
+}
+
+.rating-block-item {
+    width: calc(100%/2 - 50px);
+    margin: 20px 0;
+    align-self: center;
+    background: #ebebeb;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.user-headline-block {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-headline-block-star {
+    display: flex;
+}
+
+.rating-headline-star {
+    width: 45px;
+    margin: 20px;
+}
+
+.rating-headline-block-text {
+    font-size: 22px;
+}
+
+.user-rating-block {
+    margin-right: 35px;
+}
+
+.user-rating-item {
+    width: 25px;
+    margin: 10px;
+}
+
+.user-name-block {
+    line-height: 1.4;
+
+}
+
+.user-name {
+    font-size: 26px;
+}
+
+.more-comments-btn-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.more-comments-block {
+    display: flex;
+    justify-content: center;
+}
+
+.more-comments-block-item {
+    display: flex;
+    justify-content: center;
+}
+
+.more-comments-text {
+    font-size: 20px;
+}
+
+.more-comments-btn {
+    background: transparent;
+    border-radius: 50%;
+    border: none;
+}
+
+.add-more-comments-img {
+    width: 50%;
+}
+
+.check-us-img {
+    width: 25%;
+}
+
+.check-us-text {
+    align-self: center;
+    font-size: 26px;
+}
+
+.add-comment-block {
+    width: 50%;
+}
+
+.offer-block {
+    flex-direction: column;
+}
+
+@media (max-width: 1280px) {
+    .video-review-block {
+        flex-direction: column;
+    }
+    .offer-block {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .rating-block-item {
+        width: calc(100%/1 - 50px);
     }
 }

@@ -14,11 +14,9 @@ function getYourComment() {
             }
         }
     }
-    let newsId = '603d3d5a1bfd7d916d852e76';
-
 
     async function addYourComment() {
-        const URL = `http://localhost:4000/comment?name=${nickname}&email=${userMail}&text=${commentariyText}&rating=${starCounting()}&id=${newsId}`;
+        const URL = `http://localhost:4000/comment?name=${nickname}&email=${userMail}&text=${commentariyText}&rating=${starCounting()}&id=603d3d5a1bfd7d916d852e76`;
         const response = await axios.get(URL);
         console.log(response.data);
     }

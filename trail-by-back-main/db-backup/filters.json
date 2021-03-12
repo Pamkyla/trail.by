@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "604a3f08a6180e138417e4f8"
+  },
+  "picture": "https://lh5.googleusercontent.com/p/AF1QipMW0C8R5BnA01okqjFmwGb9WPqw4K55adLQy1uP=s516-k-no",
+  "caption": "База отдыха в Беларуси - Загородный клуб \"Фестивальный\" под Минском",
+  "filter": "Базы отдыха",
+  "link": "https://festclub.by/"
+},{
+  "_id": {
+    "$oid": "604a412aa6180e138417e4f9"
+  },
+  "picture": "https://lh5.googleusercontent.com/p/AF1QipPUWiyGc3SWPytQakaBdejRTfEwgvsaq_QpYt6Z=s435-k-no",
+  "caption": "Ресторан Беловежская пуща",
+  "filter": "Рестораны",
+  "link": "https://npbp.by/"
+},{
+  "_id": {
+    "$oid": "604a41b2a6180e138417e4fa"
+  },
+  "picture": "https://lh5.googleusercontent.com/p/AF1QipNTpIcpgtCoSXHnTCxF9wyZn7LHE0B4UUpbed8L=s451-k-no",
+  "caption": "Усадьба Тарасово под Минском",
+  "filter": "Коттеджи",
+  "link": "https://goo.gl/maps/4hCMfvMYXg1srkeV6"
+},{
+  "_id": {
+    "$oid": "604a42a7a6180e138417e4fb"
+  },
+  "picture": "https://lh5.googleusercontent.com/p/AF1QipPjMarLz_1CDU5mUGLnjTKimBs-WA_2MKDu3LHs=s499-k-no",
+  "caption": "Музей истории города Минска",
+  "filter": "Музеи",
+  "link": "http://minskmuseum.by/"
+},{
+  "_id": {
+    "$oid": "604a433ca6180e138417e4fc"
+  },
+  "picture": "https://img.tyt.by/720x720s/n/buryakina/0b/9/boubbles_20191023_bur_tutby_phsl-9282.jpg",
+  "caption": "АМИР",
+  "filter": "Кафе",
+  "link": "https://goo.gl/maps/ZSUJHuXQFsKpTUkF8"
+},{
+  "_id": {
+    "$oid": "604a4400a6180e138417e4fd"
+  },
+  "picture": "https://lh5.googleusercontent.com/p/AF1QipNCevlFaV47TPZ9sH-3tM6LNjmkP49P9E_h8e1g=s451-k-no",
+  "caption": "«Три Богатыря»",
+  "filter": "Мотели",
+  "link": "https://goo.gl/maps/xFQNtkRdzrURhPLN9"
+},{
+  "_id": {
+    "$oid": "604a4460a6180e138417e4fe"
+  },
+  "picture": "https://lh5.googleusercontent.com/p/AF1QipMl88q8XHFfdpzjQnJMHqr5q-5oSh8YJqt6nvza=s505-k-no",
+  "caption": "Слуцк Гостиница ЛеМАН",
+  "filter": "Отели",
+  "link": "https://goo.gl/maps/Bta7ujwjEphfKtrv8"
+},{
+  "_id": {
+    "$oid": "604a44e9a6180e138417e4ff"
+  },
+  "picture": "https://staybook.by/assets/thumbnails/650x400/photo322688586-apartament-30347-ul-surganova-64.jpg",
+  "caption": "Квартира на сутки, аренда",
+  "filter": "Аренда",
+  "link": "https://goo.gl/maps/nSRJWzsN1FBi7s5P8"
+}]

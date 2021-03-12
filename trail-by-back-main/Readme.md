@@ -9,4 +9,8 @@ http://{domain}/comment?name={Nickname}&email={user mail}&text={commentariy text
 
 Список новостей по фильтрам - http://{domain}/news?filter={filter name}
 
-Список ведео обзоров - http://{domain}/videos
+Список видео обзоров - http://{domain}/videos
+
+Добавление видео обзора - http://{domain}/video?caption={video caption}&url={video url}
+
+Получения списка мест по фильтрам - http://localhost:4000/filter?filter={filter text}

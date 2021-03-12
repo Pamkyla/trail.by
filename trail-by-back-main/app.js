@@ -13,6 +13,8 @@ const newsRouter = require("./routes/news");
 const postCommentRouter = require("./routes/postComment");
 const getCommentsRouter = require("./routes/comments");
 const getVideosRouter = require("./routes/videos");
+const postVideoRouter = require("./routes/postVideo");
+const getFilter = require("./routes/filter");
 
 const mongoPanel = new MongoClient(
   "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false",
@@ -43,6 +45,8 @@ app.use("/news", newsRouter);
 app.use("/comment", postCommentRouter);
 app.use("/comments", getCommentsRouter);
 app.use("/videos", getVideosRouter);
+app.use("/video", postVideoRouter);
+app.use("/filter", getFilter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
