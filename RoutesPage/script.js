@@ -17,6 +17,7 @@ async function addNewsItem(filter) {
     for (const el of data) {
         let newsBlock = document.createElement('div');
         let mainNewsBlockImg = document.createElement('div');
+        let newsLinkBlock = document.createElement('a');
         let mainNewsImg = document.createElement('img');
         let mainNewsDescription = document.createElement('p');
         let additionalNewsDescription = document.createElement('div');
@@ -31,14 +32,16 @@ async function addNewsItem(filter) {
         newsBtn.classList.add('news-btn');
 
         section.append(newsBlock);
-        newsBlock.append(mainNewsBlockImg);
+        newsBlock.append(newsLinkBlock);
+        newsLinkBlock.append(mainNewsBlockImg);
         mainNewsBlockImg.append(mainNewsImg);
-        newsBlock.append(mainNewsDescription);
+        newsLinkBlock.append(mainNewsDescription);
         newsBlock.append(additionalNewsDescription);
         additionalNewsDescription.append(newsDate);
         additionalNewsDescription.append(newsBtn);
-
+        console.log(el);
         newsBlock.setAttribute('id', `${el._id}`)
+        newsLinkBlock.setAttribute('href', `${el.link}`)
         newsBlock.setAttribute('filter', `${el.filter}`)
         mainNewsImg.setAttribute('src', `${el.picture}`);
         mainNewsDescription.innerHTML = `${el.caption}`;
