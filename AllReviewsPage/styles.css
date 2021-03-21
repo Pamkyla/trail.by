@@ -358,10 +358,6 @@
     width: 50%;
 }
 
-.offer-block {
-    flex-direction: column;
-}
-
 @media (max-width: 1280px) {
     .video-review-block {
         flex-direction: column;
@@ -375,4 +371,107 @@
     .rating-block-item {
         width: calc(100%/1 - 50px);
     }
+}
+
+.routes-block {
+    text-align: center;
+    padding: 100px;
+}
+
+.routes-headline {
+    margin-bottom: 35px;
+    font-size: 26px;
+    padding: 0 250px;
+}
+
+.rating-block {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.rating-area {
+    overflow: hidden;
+    width: 265px;
+    margin: 0 auto;
+}
+
+.rating-area:not(:checked)>input {
+    display: none;
+}
+
+.rating-area:not(:checked)>label {
+    float: right;
+    width: 42px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked)>label:before {
+    content: '★';
+}
+
+.rating-area>input:checked~label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+}
+
+.rating-area:not(:checked)>label:hover,
+.rating-area:not(:checked)>label:hover~label {
+    color: gold;
+}
+
+.rating-area>input:checked+label:hover,
+.rating-area>input:checked+label:hover~label,
+.rating-area>input:checked~label:hover,
+.rating-area>input:checked~label:hover~label,
+.rating-area>label:hover~input:checked~label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area>label:active {
+    position: relative;
+}
+
+.rating-block-img {
+    border-bottom: 1px solid #000;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.rating-img {
+    width: 25px;
+}
+
+.your-comment-block {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.your-comment-name,
+.your-comment-email {
+    max-width: 35%;
+    padding: 10px;
+    margin: 25px 0;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.your-comment-text {
+    max-width: 65%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+.add-your-comment-btn-block {
+    text-align: center;
+    margin: 0 50px 75px;
 }

@@ -5,7 +5,7 @@ async function getAllNews() {
     return (response.data);
 }
 
-
+let id = 0
 async function filter(filterName) {
     if (filterName.innerHTML == 'Все новости') {
         addNewsItem();
@@ -70,6 +70,7 @@ async function addNewsItem(filter) {
 
 
 async function transition(ev) {
+    id = ev.parentNode.parentNode.parentNode.parentNode.id;
     document.documentElement.scrollTop = 0;
     let thisId = ev.parentNode.parentNode.parentNode.parentNode.id;
     let data = await getAllNews();
@@ -112,7 +113,7 @@ async function transition(ev) {
 }
 
 async function getAllComments() {
-    const URL = `http://localhost:4000/comments?id=603d3d5a1bfd7d916d852e76`;
+    const URL = `http://localhost:4000/comments?id=${id}`;
     const response = await axios.get(URL);
     return (response.data);
 }
@@ -170,15 +171,95 @@ async function addCommentItem() {
     addComment.classList.add('rating-block-item')
     addComment.classList.add('add-comment-btn-block')
     ratingWrapper.append(addComment)
-    addComment.innerHTML = `
-    <a href="../AddCommentPage/AddCommentPage.html"><button
-            class="add-comment-btn trail-btn">Добавить комментарий</button></a>
+    addComment.addEventListener('click', addCommentPage);
+    addComment.innerHTML = `<button
+            class="add-comment-btn trail-btn">Добавить комментарий</button>
 `
+
+    function addCommentPage() {
+        document.documentElement.scrollTop = 0;
+        id = document.querySelector('.news-block').id;
+        const mainBlock = document.querySelector('.wrapper-section');
+        mainBlock.innerHTML = '';
+        let form = document.createElement('form');
+        form.setAttribute('id', 'commentForm');
+        mainBlock.append(form);
+        form.innerHTML = `            
+    <section class="section rating-routes-section">
+        <div class="routes-block">
+            <p class="routes-headline">
+                Как вы оцените этот обзор?
+            </p>
+            <div class="rating-area">
+                <input type="radio" id="star-5" name="rating" value="5">
+                <label for="star-5" title="Оценка «5»"></label>
+                <input type="radio" id="star-4" name="rating" value="4">
+                <label for="star-4" title="Оценка «4»"></label>
+                <input type="radio" id="star-3" name="rating" value="3">
+                <label for="star-3" title="Оценка «3»"></label>
+                <input type="radio" id="star-2" name="rating" value="2">
+                <label for="star-2" title="Оценка «2»"></label>
+                <input type="radio" id="star-1" name="rating" value="1">
+                <label for="star-1" title="Оценка «1»"></label>
+            </div>
+        </div>
+    </section>
+
+    <section class="section add-your-comment-section">
+        <div class="add-your-comment-block">
+            <div class="your-comment">
+                <div class="your-comment-block">
+                    <input type="text" class="your-comment-name" min="3" max="10" name="name" placeholder="Ваш никнейм">
+                    <input type="email" class="your-comment-email" name="email" placeholder="Ваша почта">
+                    <textarea class="your-comment-text" name="text" placeholder="Ваш комментарий..." maxlength="500"
+                        rows="25"></textarea>
+                </div>
+
+            </div>
+        </div>
+    </section>`
+
+        let addCommentBtn = document.createElement('div');
+        addCommentBtn.addEventListener('click', getYourComment);
+        addCommentBtn.innerHTML = `                <div class="add-your-comment-btn-block"><button
+    class="trail-btn add-your-comment">Добавить
+    комментарий</button></div>`
+        mainBlock.append(addCommentBtn);
+    }
 }
 
 async function back() {
     addNewsItem()
     document.documentElement.scrollTop = 0;
 }
+
+
+
+function getYourComment() {
+    console.log(id);
+    let nickname = document.querySelector('.your-comment-name').value;
+    let userMail = document.querySelector('.your-comment-email').value;
+    let commentariyText = document.querySelector('.your-comment-text').value;
+    let allCountStars = document.querySelector('.rating-area');
+
+    function starCounting() {
+        for (let i = 0; i < allCountStars.childNodes.length; i++) {
+            if (allCountStars.childNodes[i].nodeName == '#text') {} else {
+                if (allCountStars.childNodes[i].checked == true) {
+                    const countStars = allCountStars.childNodes[i].defaultValue;
+                    return countStars;
+                }
+            }
+        }
+    }
+
+    async function addYourComment() {
+        const URL = `http://localhost:4000/comment?name=${nickname}&email=${userMail}&text=${commentariyText}&rating=${starCounting()}&id=${id}`;
+        const response = await axios.get(URL);
+    }
+    addYourComment();
+    location.reload();
+}
+
 
 addNewsItem()
